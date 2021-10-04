@@ -109,19 +109,23 @@ jobs:
     - name: Rename
       shell: bash
       run: |
-        mv "${{ github.workspace }}/frida/build/frida-android-arm/bin/frida-server" "hluda-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
-        mv "${{ github.workspace }}/frida/build/frida-android-arm64/bin/frida-server" "hluda-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64"
-        mv "${{ github.workspace }}/frida/build/frida-android-x86/bin/frida-server" "hluda-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-x86"
-        mv "${{ github.workspace }}/frida/build/frida-android-x86_64/bin/frida-server" "hluda-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-x86_64"
+        mv "${{ github.workspace }}/frida/build/frida-android-arm/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
+        mv "${{ github.workspace }}/frida/build/frida-android-arm/bin/frida-gadget" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
+        mv "${{ github.workspace }}/frida/build/frida-android-arm64/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64"
+        mv "${{ github.workspace }}/frida/build/frida-android-arm64/bin/frida-gadget" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64"
+        mv "${{ github.workspace }}/frida/build/frida-android-x86/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-x86"
+        mv "${{ github.workspace }}/frida/build/frida-android-x86_64/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-x86_64"
 
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
           tag_name: ${{ needs.check_version.outputs.FRIDA_VERSION }}
           files: |
-            hluda-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm
-            hluda-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64
-            hluda-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-x86
-            hluda-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-x86_64
+            webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm
+            webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm
+            webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64
+            webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64
+            webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-x86
+            webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-x86_64
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
