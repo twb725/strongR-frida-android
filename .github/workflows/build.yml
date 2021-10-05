@@ -104,8 +104,9 @@ jobs:
         cd ../
         make core-android-arm
         make core-android-arm64
-        make core-android-x86
-        make core-android-x86_64
+        echo make core-android-x86
+        echo make core-android-x86_64
+        tree /home/runner/work/strongR-frida-android/strongR-frida-android/frida/build/
 
     - name: Rename
       shell: bash
