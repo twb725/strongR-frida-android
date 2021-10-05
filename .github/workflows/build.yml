@@ -25,7 +25,6 @@ jobs:
               data: { tag_name: ver }
             } = releaseResponse;
             core.setOutput('FRIDA_VERSION', ver);
-            echo FRIDA_VERSION;
       - name: Check release version
         id: checkReleaseVersion
         uses: actions/github-script@v3.1.0
