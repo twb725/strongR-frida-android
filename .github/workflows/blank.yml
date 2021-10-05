@@ -34,7 +34,7 @@ jobs:
           git clone https://github.com/AAAA-Project/Patchs
           pwd
           tree .
-          echo 12341
+          echo 1234
         
 
       # Runs a set of commands using the runners shell
