@@ -30,7 +30,7 @@ jobs:
         run: |
           echo Hello, world!
           sudo apt-get update
-          apt install tree 
+          sudo apt-get install tree 
           git clone https://github.com/AAAA-Project/Patchs
           pwd
           tree .
