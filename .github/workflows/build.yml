@@ -117,7 +117,7 @@ jobs:
       run: |
         tree "${{ github.workspace }}/frida/build/"
         mv "${{ github.workspace }}/frida/build/frida-android-arm/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
-        mv "${{ github.workspace }}/frida/build/frida-android-arm/bin/frida-gadget" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
+        mv "${{ github.workspace }}/frida/build/frida-android-arm/lib/frida/frida-gadget.so" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
         mv "${{ github.workspace }}/frida/build/frida-android-arm64/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64"
         mv "${{ github.workspace }}/frida/build/frida-android-arm64/lib/frida/64/frida-gadget.so" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64"
 
