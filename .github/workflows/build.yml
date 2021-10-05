@@ -96,7 +96,7 @@ jobs:
       run: |
         git config --global user.name "ABDEAFAs6af"
         git config --global user.email "ABDEAFAs6af@ABDEAFAs6af.com"
-        git clone ${{ secrets.PATCH_REPO }}
+        git clone https://github.com/AAAA-Project/Patchs
         export ANDROID_NDK_ROOT=${{ steps.setup-ndk.outputs.ndk-path }}
         git clone --recurse-submodules https://github.com/frida/frida
         cd frida/frida-core
