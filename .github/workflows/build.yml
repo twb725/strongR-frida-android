@@ -115,7 +115,6 @@ jobs:
     - name: Rename
       shell: bash
       run: |
-        tree "${{ github.workspace }}/frida/build/"
         mv "${{ github.workspace }}/frida/build/frida-android-arm/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
         mv "${{ github.workspace }}/frida/build/frida-android-arm/lib/frida/32/frida-gadget.so" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
         mv "${{ github.workspace }}/frida/build/frida-android-arm64/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64"
