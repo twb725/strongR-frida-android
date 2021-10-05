@@ -106,7 +106,7 @@ jobs:
         git am ../../Patchs/strongR-frida/frida-core/*.patch
         cd ../
         echo make core-android-arm
-        echo make core-android-arm64
+        make core-android-arm64
         echo make core-android-x86
         echo make core-android-x86_64
         tree "${{ github.workspace }}/frida/build/"
