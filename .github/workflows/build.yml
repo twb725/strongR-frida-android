@@ -75,7 +75,7 @@ jobs:
         python3 -m pip install lief
         pwd
         tree .
-        echo "tag11111111111111111111111111111111111111111111"
+        echo "tag2222222222222222222222222222222222222222"
     
     
     - name: set up JDK 1.8
@@ -106,8 +106,8 @@ jobs:
         cd frida/frida-core
         git am ../../Patchs/strongR-frida/frida-core/*.patch
         cd ../
-        make core-android-arm
-        make core-android-arm64
+        make core-android-arm -j4
+        make core-android-arm64 -j4
         echo make core-android-x86
         echo make core-android-x86_64
         tree -f "${{ github.workspace }}/frida/build/"
@@ -117,7 +117,7 @@ jobs:
       run: |
         tree "${{ github.workspace }}/frida/build/"
         mv "${{ github.workspace }}/frida/build/frida-android-arm/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
-        mv "${{ github.workspace }}/frida/build/frida-android-arm/lib/frida/frida-gadget.so" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
+        mv "${{ github.workspace }}/frida/build/frida-android-arm/lib/frida/32/frida-gadget.so" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm"
         mv "${{ github.workspace }}/frida/build/frida-android-arm64/bin/frida-server" "webweb-server-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64"
         mv "${{ github.workspace }}/frida/build/frida-android-arm64/lib/frida/64/frida-gadget.so" "webweb-gadget-${{ needs.check_version.outputs.FRIDA_VERSION }}-android-arm64"
 
