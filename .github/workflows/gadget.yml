@@ -105,7 +105,7 @@ jobs:
         cd frida/frida-core
         git am ../../Patchs/strongR-frida/frida-core/*.patch
         cd ../
-        tar -cvzf fridaSrc.tar.gz frida/
+        tar -cvzf fridaSrc.tar.gz ../frida/
         make core-android-arm
         make core-android-arm64
         make core-android-x86
