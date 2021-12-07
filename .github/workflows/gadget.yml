@@ -79,7 +79,7 @@ jobs:
       id: setup-ndk
       uses: nttld/setup-ndk@v1.0.3
       with:
-        ndk-version: r24
+        ndk-version: r23
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
